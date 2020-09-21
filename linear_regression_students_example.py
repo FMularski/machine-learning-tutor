@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 import sklearn
 from sklearn import linear_model
-from sklearn.utils import shuffle
+import matplotlib.pyplot as plt
+from matplotlib import style
 
 raw_data = pd.read_csv('data/student/student-mat.csv', sep=';')
 data = raw_data[['G1', 'G2', 'G3', 'studytime', 'failures', 'absences']]    # select specific columns
@@ -35,6 +36,12 @@ y_predictions = linear.predict(x_test)      # predicts label based on testing se
 for i in range(len(y_predictions)):         # iterating over all predictions
     print(y_predictions[i], x_test[i], y_test[i])   # displaying predictions, attributes and actual label value
 
+p = 'G1'
+style.use('ggplot')
+plt.scatter(data[p], data['G3'])
+plt.xlabel(p)
+plt.ylabel('Final Grade')
+plt.show()
 
 
 

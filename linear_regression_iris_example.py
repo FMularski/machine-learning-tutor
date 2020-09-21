@@ -35,10 +35,10 @@ while top_accuracy < 0.95:  # create models until its accuracy is higher than 95
 
     if accuracy > top_accuracy:
         top_accuracy = accuracy
-        with open('saved_models/student_model.pickle', 'wb') as f:  # saving model to a file by using pickle
+        with open('saved_models/iris_model.pickle', 'wb') as f:  # saving model to a file by using pickle
             pickle.dump(linear, f)
 
-with open('saved_models/student_model.pickle', 'rb') as f:  # loading model from a file by using pickle
+with open('saved_models/iris_model.pickle', 'rb') as f:  # loading model from a file by using pickle
     linear = pickle.load(f)
 
 
